@@ -27,3 +27,5 @@ iron:router
 kadira:flow-router
 themeteorchef:bert
 themeteorchef:jquery-validation
+http
+quackware:amazon-product-api
