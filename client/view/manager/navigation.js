@@ -7,6 +7,11 @@ Template.navigation.events({
     'click .signup': function(event){
     	event.preventDefault();
     	Router.go('signup');
+    },
+
+     'click .bookSearch': function(event){
+    	event.preventDefault();
+    	Router.go('bookSearch');
     }
 
 })
