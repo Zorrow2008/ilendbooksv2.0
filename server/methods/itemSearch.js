@@ -1,9 +1,9 @@
 var amazon = require('amazon-product-api');
 
 var client = amazon.createClient({
-  awsId: "ilendbooks-20",
+  awsId: "AKIAJM537YQDVUA3ENVQ", 
   awsSecret: "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",
-  awsTag: "AKIAJM537YQDVUA3ENVQ"
+  awsTag: "ilendbooks-20"
 });
 
 Meteor.methods({
@@ -14,11 +14,17 @@ Meteor.methods({
 		  	title: title,
 		  	author: author,
 		  	searchIndex: 'Books',		 	
-		  	responseGroup: 'ItemAttributes,Offers,Images,Small'
+		  	responseGroup: 'ItemAttributes'
 		}).then(function(results){
-		  console.log(results);
+		   //console.log("results = " + results);
+		   console.log('Stringified response object' + JSON.stringify(results, null, 4));
+		   var jsonObj = JSON.stringify(results, null, 4);
 		}).catch(function(err){
 		  console.log(err);
+		  console.log('Stringified error object' + JSON.stringify(err, null, 4));
 	   	});
+	   	
+	   
+	   	
   	}
 });
