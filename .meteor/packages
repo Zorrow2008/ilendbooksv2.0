@@ -29,3 +29,6 @@ themeteorchef:bert
 themeteorchef:jquery-validation
 http
 quackware:amazon-product-api
+session
+u2622:persistent-session
+twbs:bootstrap

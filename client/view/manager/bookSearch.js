@@ -5,13 +5,17 @@ Template.bookSearch.events({
 		var author = event.target.author.value;
 		console.log("title = " + title);
 		console.log("author = " + author);
-		data = Meteor.call( 'itemSearch', title, author, ( error, response ) => {
+		var appUUID = Session.get('appUUID');
+     Session.setAuth("title", title);
+    Session.setAuth("author", author);
+
+		 Meteor.call( 'itemSearch', appUUID, title, author, ( error, response ) => {
           if ( error ) {
             Bert.alert( error.reason, 'danger' );
           } else {
             Bert.alert( 'itemSearch was called', 'success' );
-            var output = document.getElementById('output');
-            output.innerHTML = 'new content';
+            Session.set('SearchResult', response)
+            Router.go('searchResult');
           }
         });  
 	}	

@@ -1,12 +1,25 @@
 <template name="navigation">
-    <ul>
-        <li><a href="{{pathFor route='signup'}}" class="signup">Sign up to borrow!</a></li>
-         {{#if currentUser}}
-        <li><a href="#" class="logout">Logout</a></li>
+    <!-- <ul> -->
+
+    <div class="container">
+        <div class="col-sm-4">
+             <a href="{{pathFor route='signup'}}" class="signup">Sign up to borrow!</a>
+        </div>
+        {{#if currentUser}}
+        <div class="col-sm-4">
+             <a href="#" class="logout">Logout</a>
+        </div>
     	{{/if}}
         {{#unless currentUser}}
-        <li><a href="{{pathFor route='login'}}" class="login">Login</a> to borrow if you're already a member!</li>
+        <div class="col-sm-4">
+            <a href="{{pathFor route='login'}}" class="login">Login</a> to borrow if you're already a member!
+        </div>
         {{/unless}}
-        <li><a href="{{pathFor route='bookSearch'}}" class="bookSearch">Search for books</a></li>
-    </ul>
+        {{#if currentUser}}
+         <div class="col-sm-4">
+        <a href="{{pathFor route='bookSearch'}}" class="bookSearch">Search for books</a>
+        </div>
+        {{/if}}
+    </div>
+    <!-- </ul> -->
 </template>
