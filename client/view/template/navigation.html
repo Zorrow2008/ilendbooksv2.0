@@ -1,7 +1,5 @@
 <template name="navigation">
-    <!-- <ul> -->
-
-    <div class="container">
+<!--     <div class="container">
         <div class="col-sm-4">
              <a href="{{pathFor route='signup'}}" class="signup">Sign up to borrow!</a>
         </div>
@@ -20,6 +18,56 @@
         <a href="{{pathFor route='bookSearch'}}" class="bookSearch">Search for books</a>
         </div>
         {{/if}}
-    </div>
-    <!-- </ul> -->
+    </div> -->
+    <!-- </ul> --> 
+    <body id="page-top">
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="{{pathFor route='home'}}">&nbsp;&nbsp;ilendbooks</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{pathFor route='home'}}" class="page-scroll home">Home</a>
+                    </li>
+<!--                      {{#unless currentUser}}
+                    <li>
+                        <a href="{{pathFor route='signup'}}" class="page-scroll signup">Sign up/Login</a>
+                    </li>
+                    {{/unless}} -->
+                    {{#if currentUser}}
+                    <li>
+                        <a class="page-scroll logout" href="#"> Logout</a>
+                    </li>
+                    {{/if}}
+                    {{#unless currentUser}}
+                    <li>
+                        <a class="page-scroll login" href="{{pathFor route='login'}}" >Sign up/Login</a> 
+                    </li>
+                    {{/unless}}
+                    {{#if currentUser}}
+                    <li>
+                        <a class="page-scroll bookSearch" href="{{pathFor route='bookSearch'}}">Search for books</a>
+                    </li>
+                    {{/if}}
+                    <li>
+                        <a class="page-scroll aboutUs" href="{{pathFor route='aboutUs'}}">About Us</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+</body>
 </template>
+

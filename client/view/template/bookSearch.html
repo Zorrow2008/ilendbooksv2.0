@@ -1,6 +1,8 @@
 <template name="bookSearch">
-<h3> Search for books!</h3>
+
+	<div class="container">
 		<form name="myForm" class="Insert">
+		<h1> Search for books!</h1>
 			Title   :<br>
 			<input type="text" name="title" placeholder="Title" required><br>
 			Author   :<br>
@@ -8,4 +10,10 @@
 			<br>
 			<input type="submit" placeholder="Search">
 		</form>
+	</div>	
+<style>
+	.container {
+		margin: 1px;
+	}
+</style>
 </template>

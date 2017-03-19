@@ -4,14 +4,21 @@ Template.navigation.events({
         Router.go('login');
     },
 
-    'click .signup': function(event){
-    	event.preventDefault();
-    	Router.go('signup');
-    },
+    // 'click .signup': function(event){
+    // 	event.preventDefault();
+    // 	Router.go('signup');
+    // },
 
-     'click .bookSearch': function(event){
+    'click .bookSearch': function(event){
     	event.preventDefault();
     	Router.go('bookSearch');
+    },
+
+    'click .aboutUs': function(event) {
+        event.preventDefault();
+        Router.go('aboutUs');
     }
+
+
 
 })
